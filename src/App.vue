@@ -51,6 +51,10 @@ const cadastraTarefa = () => {
 const excluirTarefa = (index) => {
   estado.tarefas.splice(index, 1);
 };
+
+const editarTarefa = ({ index, novoTitulo }) => {
+  estado.tarefas[index].titulo = novoTitulo;
+};
 </script>
 
 <template>
@@ -65,6 +69,7 @@ const excluirTarefa = (index) => {
     <ListaDeTarefas 
       :tarefas="getTarefasFiltradas()" 
       @excluirTarefa="excluirTarefa" 
+      @editarTarefa="editarTarefa" 
     />
   </div>
 </template>
